@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import NavBar from './NavBar'
 
-const SearchBook = () => {
-    const [data, setData] = useState(
+const DeleteBook = () => {
+    const [data,setData]=useState(
         {
             "booktitle": ""
         }
     )
-    const inputHandler = (event) => {
-        setData({ ...data, [event.target.name]: event.target.value })
-    }
-    const readValue = () => {
-        console.log(data)
-    }
+    const inputHandler=(event)=>
+        {
+            setData({...data,[event.target.name]:event.target.value})
+        }
+    const readValue=()=>
+        {
+            console.log(data)
+        }
     return (
         <div>
             <NavBar/>
@@ -25,7 +27,7 @@ const SearchBook = () => {
                                 <input type="text" className="form-control" name='booktitle' value={data.booktitle} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <button className="btn btn-success" onClick={readValue}>Search</button>
+                                <button className="btn btn-danger" onClick={readValue}>Delete</button>
                             </div>
                         </div>
                     </div>
@@ -35,4 +37,4 @@ const SearchBook = () => {
     )
 }
 
-export default SearchBook
+export default DeleteBook
